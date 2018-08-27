@@ -8,5 +8,7 @@ elif [ ! -f /etc/local/.cloud/rackspace/$1.sh ]; then
 	exit 1
 fi
 
-. /etc/local/.cloud/rackspace/$1.sh
-echo $RACKSPACE_IMAGE_NAME
+account=$1
+osver="18.04"
+
+/opt/farm/ext/cloud-client-rackspace/utils/list-images.sh $account |grep Ubuntu |grep PVHVM |grep $osver |head -n1

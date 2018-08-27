@@ -20,9 +20,11 @@ else
 	type=$RACKSPACE_DEFAULT_INSTANCE_TYPE
 fi
 
+image="`/opt/farm/ext/cloud-client-rackspace/utils/get-ubuntu-image.sh $account`"
+
 /opt/farm/ext/cloud-client-rackspace/support/rack servers instance create \
 	--name $key-$random \
 	--flavor-id $type \
 	--keypair $key \
-	--image-name "$RACKSPACE_IMAGE_NAME" \
+	--image-name "$image" \
 	--profile $account

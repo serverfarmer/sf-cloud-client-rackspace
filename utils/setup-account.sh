@@ -34,11 +34,6 @@ export RACKSPACE_PROFILE_NAME=$account
 #
 ############################################################################
 #
-# Ubuntu 14.04 LTS, 16.04 LTS or 18.04 LTS image name (use list-images.sh
-# script to discover all images available at your configured region):
-#
-export RACKSPACE_IMAGE_NAME=\"Ubuntu 18.04 LTS (Bionic Beaver) (PVHVM)\"
-#
 # Default instance type to use, when type isn't explicitely specified
 # (use list-instance-types.sh script to discover all instance types):
 #
