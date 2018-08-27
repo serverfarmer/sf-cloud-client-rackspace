@@ -9,7 +9,4 @@ elif [ ! -f /etc/local/.cloud/rackspace/$1.sh ]; then
 fi
 
 account=$1
-/opt/farm/ext/cloud-client-rackspace/support/rack servers image list \
-	--profile $account \
-	--output csv \
-	|cut -d, -f2 |grep -v ^Name |grep -v Windows |sort
+grep -A3 "\[$account\]" /root/.rack/config |grep region |sed s/\ //g |cut -d= -f2
